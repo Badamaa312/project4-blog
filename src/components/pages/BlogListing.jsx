@@ -1,9 +1,7 @@
 export default function BlogListing() {
-    return (
-      <main>
-        <div></div>
-      
-        </main>
-    );
-  }
-  
+  return (
+    <main>
+      <div></div>
+    </main>
+  );
+}
