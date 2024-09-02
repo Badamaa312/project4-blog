@@ -1,16 +1,5 @@
-
-import { Header } from "@/components/header/Header";
-import { HomePage } from "@/components/homepage/HomePage";
-
+import MainPage from "@/components/pages/MainPage";
 
 export default function Home() {
-  return ( <main>
- 
-<div>
- 
- <HomePage/>
-  </div>
-  </main>
-   
-  );
+  return <MainPage />;
 }
