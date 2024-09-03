@@ -10,6 +10,7 @@ export const Carousel = () => {
       .then((response) => response.json())
       .then((data) => setArticles(data));
   };
+  const slicedArtcle = articles.slice(0, 4);
 
   useEffect(() => {
     fetchData();
@@ -18,10 +19,15 @@ export const Carousel = () => {
   return (
     <main className="">
       <div className="w-full flex justify-around">
-        <div className="container  h-screen w-screen bg-[url('https://news.clemson.edu/wp-content/uploads/2023/06/ocean.jpg')] bg-no-repeat ">
+        <div className="container  h-screen w-screen  ">
           <div className="flex flex-wrap justify-between gap-5 max-w-[1280px]">
-            {articles.map((article) => {
-              return <div>{article.slice[0]}</div>;
+            {articles.map((slicedArtcle) => {
+              return (
+                <div>
+                  {slicedArtcle.}
+                  {slicedArtcle.tag_list}
+                </div>
+              );
             })}
           </div>
         </div>

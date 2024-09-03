@@ -19,7 +19,7 @@ const HomePage = () => {
   return (
     <div className="">
       <Header />
-      {/* <Carousel /> */}
+      <Carousel />
       <div className="container flex flex-wrap justify-between gap-5 max-w-[1280px]">
         {articles.map((article) => {
           return <ArticleCard article={article} />;
