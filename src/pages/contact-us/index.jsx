@@ -1,13 +1,11 @@
 import { Header } from "@/components/header/Header";
-import ContactUs from "@/components/pages/ContactUs";
+import ContactUsPage from "@/components/pages/ContactUsPage";
 
 export default function Contact() {
-    return (
-      <main>
-          <Header/>
-          <ContactUs/>
-      </main>
-  
-    );
-  }
-  
+  return (
+    <main>
+      <Header />
+      <ContactUsPage />
+    </main>
+  );
+}

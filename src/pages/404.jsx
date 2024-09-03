@@ -1,8 +1,5 @@
-import {ErrorPage }from "@/components/pages/404";
+import { ErrorPage } from "@/components/pages/404";
 
 export default function ErrorPaging() {
-    return (
-     <ErrorPage/>
-    );
-  }
-  
+  return <ErrorPage />;
+}

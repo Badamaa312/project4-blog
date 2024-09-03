@@ -3,7 +3,7 @@ import { Carousel } from "../carousel/Carousel";
 import { Header } from "../header/Header";
 import { useState, useEffect } from "react";
 
-export default function HomePage() {
+const HomePage = () => {
   const [articles, setArticles] = useState([]);
 
   const fetchData = () => {
@@ -11,16 +11,15 @@ export default function HomePage() {
       .then((response) => response.json())
       .then((data) => setArticles(data));
   };
-  // 30 datagin suulin 4 avah
 
   useEffect(() => {
     fetchData();
   }, []);
 
   return (
-    <div className="flex flex-col items-center w-full gap-6">
+    <div className="">
       <Header />
-      <Carousel />
+      {/* <Carousel /> */}
       <div className="container flex flex-wrap justify-between gap-5 max-w-[1280px]">
         {articles.map((article) => {
           return <ArticleCard article={article} />;
@@ -28,4 +27,6 @@ export default function HomePage() {
       </div>
     </div>
   );
-}
+};
+
+export default HomePage;
