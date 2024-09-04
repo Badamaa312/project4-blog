@@ -35,8 +35,8 @@ export const ArticleCard = ({ article }) => {
   };
 
   return (
-    <div className="w-[400px] h-[475px] border-[#E8E8EA] rounded-xl border p-4 flex flex-col justify-between">
-      <div className="flex flex-col gap-4">
+    <div className="w-[450px] h-[475px] border-[#E8E8EA] rounded-xl border p-4 flex flex-col justify-between">
+      <div className="flex flex-col gap-4 container">
         <div
           style={{
             backgroundImage: `url(${article.cover_image})`,

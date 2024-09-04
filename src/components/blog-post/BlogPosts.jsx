@@ -17,8 +17,8 @@ export const BlogPosts = () => {
   }, []);
 
   return (
-    <div className=" flex justify-center items-center">
-      <div className="container flex justify-center flex-wrap  gap-5 max-w-[1280px]">
+    <div className=" w-full flex justify-center items-center">
+      <div className="container flex justify-center flex-wrap  gap-5 ">
         {articles.map((article) => {
           return <ArticleCard article={article} />;
         })}
