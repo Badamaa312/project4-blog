@@ -1,3 +1,5 @@
+import PromisePage from "@/components/pages/PromisePage";
+
 const Promise = () => {
   return (
     <main>
