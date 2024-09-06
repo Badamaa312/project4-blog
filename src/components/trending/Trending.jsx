@@ -12,6 +12,7 @@ export const Trending = () => {
       .then((data) => setArticles(data));
   };
 
+  console.log(articles);
   useEffect(() => {
     fetchData();
   }, []);
