@@ -5,30 +5,35 @@ import { ForwardIcon } from "../svg/ForwardIcon";
 
 export const Carousel = () => {
   const [articles, setArticles] = useState([]);
+
+  // Casousel deerh slide page-r soligdoh
+  // Page udaan bsan tul index-r ni duudav
   // const [page, setPage] = useState(1);
+  // const changeBackImage = () => {
+  //   setPage(page - 1);
+  // };
+  // const changeNextImage = () => {
+  //   setPage(page + 1);
+  // };
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const fetchData = () => {
+  const fetchCarouselData = () => {
     fetch(`https://dev.to/api/articles?top=1`)
       .then((response) => response.json())
       .then((data) => setArticles(data));
   };
 
   useEffect(() => {
-    fetchData();
+    fetchCarouselData();
   }, [currentIndex]);
-  // const changeBackImage = () => {
-  //   setPage(page - 1);
-  // };
+
   const changeBackImage = () => {
     setCurrentIndex((currentIndex) =>
       currentIndex === 0 ? articles.length - 1 : currentIndex - 1
     );
   };
 
-  // const changeNextImage = () => {
-  //   setPage(page + 1);
-  // };
   const changeNextImage = () => {
     setCurrentIndex((currentIndex) =>
       currentIndex === articles.length - 1 ? 0 : currentIndex + 1
@@ -71,14 +76,3 @@ export const Carousel = () => {
     </main>
   );
 };
-
-{
-  /* <main className="">
-<div className="w-full flex justify-around">
-  <div className="container flex justify-between items-center px-8">
-  
-  
-  </div>
-</div>
-</main> */
-}

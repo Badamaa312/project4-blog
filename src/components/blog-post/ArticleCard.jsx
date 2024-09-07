@@ -1,38 +1,10 @@
 import { Header } from "../header/Header";
 import { Footer } from "../footer/Footer";
 import { useEffect, useState } from "react";
+import { generatMonth } from "../util/generateMonth";
 
 export const ArticleCard = ({ article }) => {
   const publishedDate = new Date(article.published_at);
-
-  const generatMonth = (month) => {
-    switch (month) {
-      case 1:
-        return "January";
-      case 2:
-        return "February";
-      case 3:
-        return "March";
-      case 4:
-        return "April";
-      case 5:
-        return "May";
-      case 6:
-        return "June";
-      case 7:
-        return "July";
-      case 8:
-        return "August";
-      case 9:
-        return "September";
-      case 10:
-        return "October";
-      case 11:
-        return "November";
-      case 12:
-        return "December";
-    }
-  };
 
   return (
     <div className="w-[450px] h-[475px] border-[#E8E8EA] rounded-xl border p-4 flex flex-col justify-between">
@@ -56,7 +28,6 @@ export const ArticleCard = ({ article }) => {
           </p>
         </div>
       </div>
-
       <p className=" text-[#97989F]">
         {publishedDate.getFullYear()}-{generatMonth(publishedDate.getMonth())}-
         {publishedDate.getDay()}

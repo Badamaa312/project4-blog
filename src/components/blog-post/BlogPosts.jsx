@@ -26,6 +26,7 @@ export const BlogPosts = () => {
         {articles.map((article) => {
           return <ArticleCard article={article} />;
         })}
+        <script src="src\components\util\generateMonth.js"></script>
       </div>
       <button
         className="border bg-gray-300 px-4 rounded-md"

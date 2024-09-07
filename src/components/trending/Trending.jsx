@@ -1,5 +1,3 @@
-import Image from "next/image";
-import { ArticleCard } from "../blog-post/ArticleCard";
 import { useState, useEffect } from "react";
 import { TrendingArticleCard } from "./TrendingArticleCard";
 
