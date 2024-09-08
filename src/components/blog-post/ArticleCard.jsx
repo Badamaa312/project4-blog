@@ -30,7 +30,7 @@ export const ArticleCard = ({ article }) => {
       </div>
       <p className=" text-[#97989F]">
         {publishedDate.getFullYear()}-{generatMonth(publishedDate.getMonth())}-
-        {publishedDate.getDay()}
+        {publishedDate.getDay() + 1}
       </p>
     </div>
   );
