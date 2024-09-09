@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ArticleCard } from "../blog-post/ArticleCard";
+import Link from "next/link";
 
 const BlogsPage = () => {
   const [articles, setArticles] = useState([]);
@@ -23,7 +24,11 @@ const BlogsPage = () => {
     <div className=" w-full flex justify-center items-center gap-5">
       <div className="container flex justify-center flex-wrap  gap-5 ">
         {articles.map((article) => {
-          return <ArticleCard article={article} />;
+          return (
+            <Link href={`/blogs/${article.id}`}>
+              <ArticleCard article={article} />
+            </Link>
+          );
         })}
       </div>
       <button

@@ -1,4 +1,4 @@
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 const SinglePostPage = () => {
@@ -16,10 +16,11 @@ const SinglePostPage = () => {
     fetchData();
   }, []);
 
+  console.log(router.query.id);
   return (
     <div className="flex flex-col items-center">
-      <h1>{article.title}</h1>
-      <p>{article.description}</p>
+      <h1>{article?.title}</h1>
+      <p>{article?.description}</p>
     </div>
   );
 };
