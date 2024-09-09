@@ -22,7 +22,17 @@ export const BlogPosts = () => {
   }, [page]);
 
   return (
-    <div className=" w-full flex justify-center items-center gap-5">
+    <div className=" w-full flex flex-col justify-center items-center gap-5">
+      <div className="container flex flex-col gap-[32px]">
+        <div>
+          <p className="flex text-2xl bg-[181A2A] font-bold">All Blog Post</p>
+        </div>
+        <div className="flex gap-[32px]">
+          <span>All</span>
+          <span>Devchallenge</span>
+          <span>Test</span>
+        </div>
+      </div>
       <div className="container flex justify-center flex-wrap  gap-5 ">
         {articles.map((article) => {
           return (

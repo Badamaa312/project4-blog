@@ -1,13 +1,9 @@
-import { Header } from "../header/Header";
-import { Footer } from "../footer/Footer";
-import { useEffect, useState } from "react";
-
 export const TrendingArticleCard = ({ article }) => {
   return (
     <div className="w-[289px]  flex flex-col justify-between">
       <div className="flex flex-col ">
         <div
-          className="flex items-end pl-4 pr-4"
+          className="flex items-end pl-4 pr-4 h-[320px]"
           style={{
             backgroundImage: `url(${article.cover_image})`,
             width: "100%",

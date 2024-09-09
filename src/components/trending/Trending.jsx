@@ -17,9 +17,11 @@ export const Trending = () => {
 
   return (
     <main className="">
-      <div className="w-full flex flex-col gap-[30px] items-center ">
-        <div className="flex text-2xl bg-[181A2A]">Trending</div>
-        <div className=" container flex flex-wrap justify-between gap-5 max-w-[1280px]">
+      <div className="w-full flex flex-col gap-[30px] items-center justify-between ">
+        <div className="container flex ">
+          <p className="flex text-2xl bg-[181A2A] font-bold">Trending</p>
+        </div>
+        <div className=" container flex flex-wrap justify-between gap-5">
           {articles.map((article) => {
             return <TrendingArticleCard article={article} />;
           })}
