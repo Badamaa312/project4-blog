@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 import { TrendingArticleCard } from "./TrendingArticleCard";
+import Link from "next/link";
 
 export const Trending = () => {
   const [articles, setArticles] = useState([]);
 
   const fetchData = () => {
-    fetch(`https://dev.to/api/articles?per_page=4`)
+    fetch(`https://dev.to/api/articles/latest?per_page=4`)
       .then((response) => response.json())
       .then((data) => setArticles(data));
   };
 
-  console.log(articles);
   useEffect(() => {
     fetchData();
   }, []);
@@ -23,7 +23,11 @@ export const Trending = () => {
         </div>
         <div className=" container flex flex-wrap justify-between gap-5">
           {articles.map((article) => {
-            return <TrendingArticleCard article={article} />;
+            return (
+              <Link href={`/blogs/${article.id} `} key={article?.id}>
+                <TrendingArticleCard article={article} />
+              </Link>
+            );
           })}
         </div>
       </div>

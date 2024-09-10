@@ -1,7 +1,28 @@
+import { useState, useEffect } from "react";
 import { SearchIcon } from "../svg/SearchIcon";
 import Link from "next/link";
 
 export const Header = () => {
+  const [articles, setArticles] = useState([]);
+  const [articlesForSearch, setArticlesForSearch] = useState([]);
+
+  const fetchSearchData = () => {
+    fetch(`https://dev.to/api/articles?per_page=100`)
+      .then((response) => response.json())
+      .then((data) => setArticlesForSearch(data));
+  };
+
+  const fetchData = () => {
+    fetch(`https://dev.to/api/articles/latest`)
+      .then((response) => response.json())
+      .then((data) => setArticles(data));
+  };
+
+  useEffect(() => {
+    fetchData();
+    fetchSearchData();
+  }, []);
+
   return (
     <main className="">
       <div className="w-full flex justify-around">
@@ -20,7 +41,9 @@ export const Header = () => {
           </div>
           <div className="pl-4 pb-2 pt-2 pr-2 flex items-center justify-center rounded-md bg-[#E8E8EA] gap-[40px] ">
             <input placeholder="search" type="text" className="bg-[#E8E8EA]" />
-            <SearchIcon />
+            {articlesForSearch.map((article) => {
+              return <div>{article?.title}</div>;
+            })}
           </div>
         </div>
       </div>
