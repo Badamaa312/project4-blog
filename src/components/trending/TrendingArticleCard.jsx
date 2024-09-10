@@ -15,11 +15,11 @@ export const TrendingArticleCard = ({ article }) => {
         >
           <div className="">
             <span className=" flex items-center text-white rounded-md bg-[#4B6BFB] pl-4 pr-4">
-              {article.tag_list[0]}
+              {article?.tag_list[0]}
             </span>
             <div className="overflow-hidden h-[100px]">
-              <p className="text-xl text-pink-700 font-semibold text-ellipsis ">
-                {article.description}
+              <p className="text-xl font-semibold text-ellipsis line-clamp-3 ">
+                {article?.description}
               </p>
             </div>
           </div>

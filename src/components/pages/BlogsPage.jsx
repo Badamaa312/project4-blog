@@ -25,7 +25,7 @@ const BlogsPage = () => {
       <div className="container flex justify-center flex-wrap  gap-5 ">
         {articles.map((article) => {
           return (
-            <Link href={`/blogs/${article.id}`}>
+            <Link href={`/blogs/${article.id} `} key={article?.id}>
               <ArticleCard article={article} />
             </Link>
           );

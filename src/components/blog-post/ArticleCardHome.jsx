@@ -1,6 +1,6 @@
 import { generatMonth } from "../util/generateMonth";
 
-export const ArticleCard = ({ article }) => {
+export const ArticleCardHome = ({ article }) => {
   const publishedDate = new Date(article.published_at);
 
   return (
@@ -26,21 +26,12 @@ export const ArticleCard = ({ article }) => {
             </p>
           </div>
         </div>
-        <div className="flex gap-[20px]  items-center">
-          <div className="flex gap-[12px]  items-center ">
-            <img
-              src={article?.user.profile_image_90}
-              alt=""
-              className="rounded-full w-[36px] h-[36px]"
-            />
-            <p>{article?.user.name}</p>
-          </div>
-          <p className=" text-[#97989F]">
-            {publishedDate?.getFullYear()}-
-            {generatMonth(publishedDate?.getMonth())}-
-            {publishedDate?.getDay() + 1}
-          </p>
-        </div>
+
+        <p className=" text-[#97989F]">
+          {publishedDate?.getFullYear()}-
+          {generatMonth(publishedDate?.getMonth())}-
+          {publishedDate?.getDay() + 1}
+        </p>
       </div>
     </main>
   );

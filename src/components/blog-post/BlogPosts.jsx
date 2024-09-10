@@ -1,7 +1,6 @@
-import { useRouter } from "next/router";
-import { ArticleCard } from "../blog-post/ArticleCard";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { ArticleCardHome } from "./ArticleCardHome";
 
 export const BlogPosts = () => {
   const [articles, setArticles] = useState([]);
@@ -30,14 +29,17 @@ export const BlogPosts = () => {
         <div className="flex gap-[32px]">
           <span>All</span>
           <span>Devchallenge</span>
-          <span>Test</span>
+          <span>Feeling</span>
+          <span>Beginners</span>
+          <span>Test2</span>
+          <span>Test3</span>
         </div>
       </div>
       <div className="container flex justify-center flex-wrap  gap-5 ">
         {articles.map((article) => {
           return (
-            <Link href={`/blogs/${article.id}`}>
-              <ArticleCard article={article} />
+            <Link href={`/blogs/${article.id}`} key={article?.user.name}>
+              <ArticleCardHome article={article} />
             </Link>
           );
         })}
