@@ -18,10 +18,6 @@ export const Footer = () => {
               <button className="px-2">Contact</button>
             </Link>
           </div>
-          <div className="pl-4 pb-2 pt-2 pr-2 flex items-center justify-center rounded-md bg-[#E8E8EA] gap-[40px] ">
-            <input placeholder="search" type="text" className="bg-[#E8E8EA]" />
-            <SearchIcon />
-          </div>
         </div>
       </div>
       <script src="src\components\util\generateMonth.js"></script>

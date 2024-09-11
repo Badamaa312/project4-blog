@@ -30,7 +30,7 @@ const BlogsPage = () => {
         <div className=" flex justify-center flex-wrap  gap-5 ">
           {articles.map((article) => {
             return (
-              <Link href={`/blogs/${article.id} `} key={article?.id}>
+              <Link href={`blogs/${article.id} `} key={article?.id}>
                 <ArticleCard article={article} />
               </Link>
             );
@@ -40,7 +40,8 @@ const BlogsPage = () => {
           className="border bg-gray-300 px-4 rounded-md"
           onClick={handleMorePageClick}
         >
-          <LoadMoreButton />
+          Load More
+          {/* <LoadMoreButton /> */}
         </button>
       </div>
     </div>
