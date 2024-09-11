@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { Header } from "../header/Header";
+import { Header } from "../layout/header/Header";
 
 const SinglePostPage = () => {
   const router = useRouter();

@@ -1,4 +1,4 @@
-import { SearchIcon } from "../svg/SearchIcon";
+import { SearchIcon } from "../../svg/SearchIcon";
 import Link from "next/link";
 
 export const Footer = () => {

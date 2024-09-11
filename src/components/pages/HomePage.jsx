@@ -1,8 +1,8 @@
 import { BlogPosts } from "../blog-post/BlogPosts";
 import { Carousel } from "../carousel/Carousel";
-import { Header } from "../header/Header";
+import { Header } from "../layout/header/Header";
 import { Trending } from "../trending/Trending";
-import { Footer } from "../footer/Footer";
+import { Footer } from "../layout/footer/Footer";
 
 const HomePage = () => {
   return (

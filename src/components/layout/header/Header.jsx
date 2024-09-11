@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
-import { SearchIcon } from "../svg/SearchIcon";
+import { SearchIcon } from "../../svg/SearchIcon";
 import Link from "next/link";
 
 export const Header = () => {
   const [articles, setArticles] = useState([]);
   const [articlesForSearch, setArticlesForSearch] = useState([]);
   const [searchValue, setSearchValue] = useState("");
-  const [emptyValue, setEmptyValue] = useState("false");
 
   const filteredArticle = articlesForSearch.filter((article) =>
     article?.title?.toLowerCase().includes(searchValue)
@@ -21,14 +20,16 @@ export const Header = () => {
     return (
       <div
         className={`${
-          searchValue ? "h-[180px]" & "flex" : "h-0" & "hidden"
+          searchValue ? "flex" : "hidden"
         } flex flex-col gap-2 transition-all duration-200 overflow-hidden absolute bg-gray-100 rounded-2xl`}
       >
         {searchValue &&
           filteredArticle.map((article) => {
             return (
               <Link href={`blogs/${article?.id}`}>
-                <div>{article?.title}</div>
+                <div className="p-3 border border-gray-400 rounded-xl">
+                  {article?.title}
+                </div>
               </Link>
             );
           })}
@@ -50,7 +51,7 @@ export const Header = () => {
   useEffect(() => {
     fetchData();
     fetchSearchData();
-    setSearchValue("");
+    // setSearchValue();
   }, []);
 
   return (
@@ -69,20 +70,42 @@ export const Header = () => {
               <button className="px-2">Contact</button>
             </Link>
           </div>
-          <div className="flex rounded-md bg-[#E8E8EA]  ">
+          <div className="flex rounded-md bg-[#E8E8EA]   ">
             <input
               placeholder="search"
               type="text"
               className="bg-[#E8E8EA]"
               onChange={handleInputChange}
             />
-            <SearchDropDown
-              searchValue={searchValue}
-              filteredArticle={filteredArticle}
-            />
+            {searchValue && (
+              <SearchDropDown
+                searchValue={searchValue}
+                filteredArticle={filteredArticle}
+              />
+            )}
           </div>
         </div>
       </div>
     </main>
   );
 };
+
+// const [empty, setGetEmpty] = useState(false);
+
+// const searchGetEmpty = () => {
+//   setGetEmpty(!false);
+// };
+
+// return (
+//   <div className="flex flex-col items-center justify-center text-black bg-white dark:bg-neutral-900 dark:text-white ">
+//     {empty? (
+//       <button onClick={setGetEmpty}>
+//         <MoonIcon />
+//       </button>
+//     ) : (
+//       <button onClick={searchGetEmpty}>
+//         <SunIcon />
+//       </button>
+//     )}
+//   </div>
+// );
