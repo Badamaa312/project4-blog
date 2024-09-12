@@ -18,11 +18,10 @@ const SinglePostPage = () => {
     fetchData();
   }, [idUpdate]);
 
-  console.log(router.query.id);
   return (
     <main>
-      <div className="w-full flex items-center ">
-        <div className="container flex flex-col items-center">
+      <div className="w-full flex items-center justify-center">
+        <div className="container flex flex-col items-center justify-center">
           <h1 className="h-[80px]">{article?.title}</h1>
           <img src={article?.cover_image} alt="" />
           <p>{article?.description}</p>

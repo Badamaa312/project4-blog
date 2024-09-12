@@ -38,7 +38,7 @@ export const BlogPosts = () => {
       <div className="container flex justify-center flex-wrap  gap-5 ">
         {articles.map((article) => {
           return (
-            <Link href={`/blogs/${article.id}`} key={article?.user.name}>
+            <Link href={`blogs/${article.id}`} key={article?.user.name}>
               <ArticleCardHome article={article} />
             </Link>
           );

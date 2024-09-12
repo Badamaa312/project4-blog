@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { SearchIcon } from "../../svg/SearchIcon";
 import Link from "next/link";
+import { LogoIcon } from "@/components/svg/LogoIcon";
 import { SearchDropDown } from "@/components/drop-down/DropDown";
 
 export const Header = () => {
@@ -37,7 +38,7 @@ export const Header = () => {
   }, []);
 
   return (
-    <main className="">
+    <main className="pb-8 pt-8">
       <div className="w-full flex justify-around relative">
         <div className="container flex justify-between items-center px-8">
           <LogoIcon />
@@ -52,12 +53,12 @@ export const Header = () => {
               <button className="px-2">Contact</button>
             </Link>
           </div>
-          <div className="flex rounded-md bg-[#E8E8EA] text-wrap">
+          <div className="flex rounded-md bg-[#E8E8EA] text-wrap gap-2 pr-2 pl-3 pb-2 pt-2 items-center">
             <input
-              placeholder="search"
+              placeholder="Search"
               value={searchValue}
               type="text"
-              className="bg-[#E8E8EA] outline-none"
+              className="bg-[#E8E8EA] outline-none rounded-md"
               onChange={handleInputChange}
             />
             {
@@ -68,6 +69,7 @@ export const Header = () => {
                 filteredArticle={filteredArticle}
               />
             }
+            <SearchIcon />
           </div>
         </div>
       </div>
