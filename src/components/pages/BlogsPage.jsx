@@ -22,7 +22,7 @@ const BlogsPage = () => {
   }, [page]);
 
   return (
-    <div className="w-full flex justify-center items-center gap-5">
+    <div className="w-full flex justify-center items-center gap-5 pb-[80px] ">
       <div className="container flex flex-col">
         <div className="pt-12 pb-12">
           <p className="flex text-2xl bg-[181A2A] font-bold">All Blog Post</p>
@@ -36,13 +36,14 @@ const BlogsPage = () => {
             );
           })}
         </div>
-        <button
-          className="border bg-gray-300 px-4 rounded-md"
-          onClick={handleMorePageClick}
-        >
-          Load More
-          {/* <LoadMoreButton /> */}
-        </button>
+        <div className="flex justify-center pt-8">
+          <button
+            className=" pr-[20px] pl-[20px] pt-[12px] pb-[12px]  border rounded-md"
+            onClick={handleMorePageClick}
+          >
+            Load More
+          </button>
+        </div>
       </div>
     </div>
   );

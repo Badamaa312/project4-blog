@@ -22,7 +22,7 @@ export const Trending = () => {
           <p className="flex text-2xl bg-[181A2A] font-bold">Trending</p>
         </div>
         <div className=" container flex flex-wrap justify-between gap-5">
-          {articles.map((article) => {
+          {articles?.map((article) => {
             return (
               <Link href={`/blogs/${article.id} `} key={article?.id}>
                 <TrendingArticleCard article={article} />

@@ -41,7 +41,9 @@ export const Header = () => {
     <main className="pb-8 pt-8">
       <div className="w-full flex justify-around relative">
         <div className="container flex justify-between items-center px-8">
-          <LogoIcon />
+          <Link href="/">
+            <LogoIcon />
+          </Link>
           <div className="flex items-center justify-center ">
             <Link href="/">
               <button className="px-2">Home</button>
@@ -53,7 +55,7 @@ export const Header = () => {
               <button className="px-2">Contact</button>
             </Link>
           </div>
-          <div className="flex rounded-md bg-[#E8E8EA] text-wrap gap-2 pr-2 pl-3 pb-2 pt-2 items-center">
+          <div className="flex rounded-md bg-[#E8E8EA] text-wrap gap-2 pr-2 pl-3 pb-2 pt-2 items-center relative">
             <input
               placeholder="Search"
               value={searchValue}

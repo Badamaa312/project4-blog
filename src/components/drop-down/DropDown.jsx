@@ -21,7 +21,7 @@ export const SearchDropDown = ({
     >
       {filteredArticle.map((article) => {
         return (
-          <Link onClick={setIsOpen} href={`blogs/${article?.id}`}>
+          <Link onClick={setIsOpen} href={`/blogs/${article?.id}`}>
             <div className="p-3 border  rounded-xl text-wrap hover:bg-blue-100">
               {article?.title}
             </div>

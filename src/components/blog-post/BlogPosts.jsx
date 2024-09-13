@@ -13,7 +13,7 @@ export const BlogPosts = () => {
   };
 
   const handleMorePageClick = () => {
-    setPage(page + 1);
+    setPage(page + 3);
   };
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export const BlogPosts = () => {
   }, [page]);
 
   return (
-    <div className=" w-full flex flex-col justify-center items-center gap-5">
+    <div className=" w-full flex flex-col justify-center items-center gap-5 pb-[80px]">
       <div className="container flex flex-col gap-[32px]">
         <div>
           <p className="flex text-2xl bg-[181A2A] font-bold">All Blog Post</p>
@@ -44,12 +44,14 @@ export const BlogPosts = () => {
           );
         })}
       </div>
-      <button
-        className="border bg-gray-300 px-4 rounded-md"
-        onClick={handleMorePageClick}
-      >
-        Load more
-      </button>
+      <div className="">
+        <button
+          className=" pr-[20px] pl-[20px] pt-[12px] pb-[12px]  border rounded-md"
+          onClick={handleMorePageClick}
+        >
+          Load More
+        </button>
+      </div>
     </div>
   );
 };

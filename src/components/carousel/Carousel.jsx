@@ -3,22 +3,13 @@ import { BackIcon } from "../svg/BackIcon";
 import { ForwardIcon } from "../svg/ForwardIcon";
 import { generatMonth } from "../util/generateMonth";
 import Link from "next/link";
+import { Main } from "next/document";
 
 export const Carousel = (article) => {
   const [articles, setArticles] = useState([]);
-
-  // Casousel deerh slide page-r soligdoh
-  // Page udaan bsan tul index-r ni duudav
-  // const [page, setPage] = useState(1);
-  // const changeBackImage = () => {
-  //   setPage(page - 1);
-  // };
-  // const changeNextImage = () => {
-  //   setPage(page + 1);
-  // };
-
   const [currentIndex, setCurrentIndex] = useState(0);
   const publishedDate = new Date(article.published_at);
+
   const fetchCarouselData = () => {
     fetch(`https://dev.to/api/articles?top=1`)
       .then((response) => response.json())
@@ -42,8 +33,9 @@ export const Carousel = (article) => {
   };
 
   return (
-    <Link href={`/blogs/${articles[currentIndex]?.id}`}>
+    <main>
       <div className="w-full flex justify-between items-center flex-col">
+        {/* <Link href={`blogs/${articles[currentIndex]?.id}`}> */}
         <div className="container flex justify-between items-end">
           <div className=" flex h-[780px] w-full m-auto  py-16 relative">
             <div
@@ -65,16 +57,16 @@ export const Carousel = (article) => {
                 </div>
                 <div>
                   <p className=" text-[#97989F]">
-                    {publishedDate.getFullYear()}-
-                    {generatMonth(publishedDate.getMonth())}-
-                    {publishedDate.getDay() + 1}
+                    {publishedDate?.getFullYear()}-
+                    {generatMonth(publishedDate?.getMonth())}-
+                    {publishedDate?.getDay() + 1}
                   </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
+        {/* </Link> */}
         <div className="container flex justify-end gap-[9px] ">
           <button onClick={changeBackImage}>
             <BackIcon />
@@ -84,6 +76,16 @@ export const Carousel = (article) => {
           </button>
         </div>
       </div>
-    </Link>
+    </main>
   );
 };
+
+// Casousel deerh slide page-r soligdoh
+// Page udaan bsan tul index-r ni duudav
+// const [page, setPage] = useState(1);
+// const changeBackImage = () => {
+//   setPage(page - 1);
+// };
+// const changeNextImage = () => {
+//   setPage(page + 1);
+// };
